@@ -1,0 +1,48 @@
+@use '../tools/responsive' as responsive;
+
+.blog__post {
+    padding-top: var(--menu-height);
+    grid-column: inner;
+    padding: 6.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    @include responsive.max($breakpoint: 900px) {
+        padding: 3rem;
+    }
+
+    @include responsive.max($breakpoint: 730px) {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .post__date {
+        font-size: 12px;
+        font-weight: 100;
+        margin-top: 0.5rem;
+    }
+
+    .post__image {
+        margin-top: 1rem;
+    }
+
+    .post__links {
+        color: var(--color-medium);
+        font-family: var(--font-accent);
+        font-size: var(--font-size-2);
+
+        .post__kategory {
+            font-size: var(--font-size-4);
+            color: var(--color-medium);
+        }
+    }
+    
+}
+
+.container__inner {
+    display: grid;
+    grid-template-columns: var(--grid-column);
+    padding-top: 3rem;
+}

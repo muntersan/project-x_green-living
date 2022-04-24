@@ -1,0 +1,151 @@
+@use '../tools/responsive' as responsive;
+
+.menu {
+    position: fixed;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 999;
+    
+    @include responsive.max($breakpoint:800px){
+        display: flex;
+        display: none;
+        z-index: 998;
+        transition: all 0.3s;
+    }
+
+}
+
+.menu__list {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: auto;
+    margin: 0;
+    font-family: var(--font-accent);
+    font-size: var(--font-size-4);
+    list-style: none; 
+    margin-right: 40px;
+}
+
+.menu__item {
+    display: flex;
+    position: relative;
+    margin-right: 2rem;
+}
+
+.menu__link {
+    color: var(--color-medium); 
+}
+
+ul {
+    padding: 0;
+}
+
+.menu li:hover > ul {
+    display: flex;
+}
+
+//submenu/dropdown
+.menu__dropdown {
+    flex-direction: column;
+    position: absolute;
+    top:100%;
+    display: none;
+    width: auto;
+    padding-left: 1rem;
+}
+    
+.menu__dropdown--scrolled {
+    background-color: var(--color-light);
+    transition: 0.5s
+}
+  
+// menu button
+.menu-button {
+    border: 0;
+    padding: 0;
+    height: 40px;
+    width: 24px;
+    cursor: pointer;
+    background: none;
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 999;
+        
+    @include responsive.min(801px){
+        display: none;
+    }
+    
+}
+
+.menu-button__hamburger {
+    height: 2px;
+    width: 100%;
+    background: var(--color-medium);
+    position: relative;
+}
+
+.menu-button__hamburger::before, .menu-button__hamburger::after {
+    content: '';
+    height: 2px;
+    width: 100%;
+    background: var(--color-medium);
+    position: absolute;
+    left: 0;
+    transition: all 0.3s;
+}
+
+.menu-button__hamburger::before {
+    top: -8px;
+}
+
+.menu-button__hamburger::after {
+    top: 8px;
+}
+
+.menu--opened {
+    display: contents;
+    display: flex;
+    justify-content: flex-end;
+    z-index: 999;
+    top: 60px;
+    
+    .menu__list {
+        flex-direction: column;
+        padding-left: 1rem;
+        align-items: flex-start;
+        margin: 0;
+        font-size: var(--font-size-3);
+        background-color: var(--color-light); 
+    }
+
+    .menu__dropdown {
+        right: 100%;
+        top: 0;
+        justify-content: flex-end;
+        width: auto;
+        font-size: var(--font-size-3);
+        background-color: var(--color-light);
+
+        a {
+            color: var(--color-accent);
+
+            &:hover {
+                color: var(--color-medium);
+            }
+        }
+
+        .menu__item{
+            padding-left: 1rem;
+            justify-content: right;
+            text-align: right;
+        }
+    }
+
+}

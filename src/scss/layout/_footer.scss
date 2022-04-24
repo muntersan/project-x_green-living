@@ -1,0 +1,119 @@
+@use '../tools/responsive' as responsive;
+
+.footer {
+    display: grid;
+    grid-template-columns: var(--grid-column);
+    background-color: var(--color-light); 
+    width: 100vw; 
+    height: 24rem;
+    margin-top: var(--section-gap-inner);
+
+    @include responsive.max($breakpoint:1100px) {
+        margin-top: 8rem;
+        margin-top: var(--section-gap);
+    }
+
+    @include responsive.max($breakpoint: 500px) {
+        height: 15rem;
+        padding-right: 1rem ;
+        padding-left: 1rem;
+    }
+
+    &__inner {
+        grid-column: inner;
+        display: flex;
+        justify-content: space-evenly;
+
+        @include responsive.max($breakpoint:800px){
+            justify-content: space-between;
+        }
+    }
+
+    &__branding {
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 14.4rem;
+        @include responsive.max($breakpoint:800px){
+            width: 11rem;
+        }
+
+        @include responsive.max($breakpoint: 660px){
+            display: none;
+        }
+
+        &__logo {
+            max-width: 15vw;
+        }
+    }
+
+    
+    //  KNAPPAR
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        width: 14.4rem;
+
+        @include responsive.max($breakpoint:800px){
+            width: 11rem;
+        }
+        
+        .button {
+            background-color: var(--color-light);
+            color: var(--color-medium);
+            display: inline-block;
+            text-decoration: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-size: var(--font-size-base);
+            font-family: var(--font-serif);
+            border: 1px solid var(--color-medium);
+            cursor: pointer;
+            margin-bottom: 0.5rem;
+            width: 8rem;
+
+            @include responsive.max($breakpoint:800px){
+                width: 7rem;
+                padding: 0.5rem;
+            }
+
+            &:hover {
+                border: 2px solid var(--color-accent);
+            
+                a {
+                    color: var(--color-medium);
+                }
+            }
+        }
+
+    }
+    
+    //  ARTIKLAR
+    .articles {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        li{
+            margin-bottom: 0.5rem;
+            font-size: var(--font-size-small);
+        }
+    }    
+
+}
+
+//  COPYRIGTH
+.copyright__container {
+    width: 100vw;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: var(--color-dark);
+    text-align: center;
+}

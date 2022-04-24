@@ -1,0 +1,208 @@
+@use '../tools/responsive' as responsive;
+
+.welcome__image {
+    z-index: 1;
+    position: relative;
+    height: 36rem;
+    grid-area: var(--grid-column-image-1);
+
+    @include responsive.max($breakpoint:1000px) {
+        height: 30rem;      
+    }
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 44rem;
+            width: 30rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--color-accent);
+            left: -2.5rem;
+            z-index: -1;
+
+            @include responsive.max($breakpoint:1100px) {
+                width: 20rem;
+                height: 37rem;
+            }
+
+            @include responsive.max($breakpoint:1000px) {
+                display: none;
+            }
+
+        }
+            
+    &__inner {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        background-image: url(/assets/images/image-1@2x.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include responsive.max($breakpoint:1100px) {
+            height: 85%;
+        }
+
+        @include responsive.max($breakpoint:1000px) {
+            background-position: bottom;
+        }
+
+    }
+
+}
+
+.welcome {
+
+    &__content {
+        grid-area: var(--grid-column-content-2);
+
+        @include responsive.max($breakpoint:1000px) {
+            grid-area: 2 / 3 / 3 / 11;
+        }
+    
+        @include responsive.max($breakpoint:800px) {
+            grid-area: 2 / 1 / 3 / 13;
+        }
+
+        .section__title {
+            grid-area: 1 / 1 / 2 / 12;
+
+            @include responsive.max($breakpoint:1000px) {
+                text-align: center;
+                grid-area: 1 / 2 / 2 / 12;
+            }
+
+            @include responsive.max($breakpoint: 700px) {
+                text-align: left;
+            }
+
+            @include responsive.max($breakpoint: 500px) {
+                grid-area: 1 / 1 / 2 / 13;
+            }
+        }
+
+        .section__text {
+            grid-area: 2 / 1 / 3 / 12;
+
+            @include responsive.max($breakpoint:1000px) {
+                grid-area: 2 / 2 / 3 / 12;
+                text-align: center;
+            }
+
+            @include responsive.max($breakpoint:800px) {
+                grid-area: 2 / 3 / 3 / 11;
+            }
+
+            @include responsive.max($breakpoint: 700px) {
+                max-width: 25rem;
+                text-align: left;
+                grid-area: 2 / 2 / 3 / 12;
+            }
+
+            @include responsive.max($breakpoint: 500px) {
+                grid-area: 2 / 1 / 3 / 13;
+            }
+        }
+
+    }
+
+    &__info {
+        grid-area: 3 / 1 / 4 / 11;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2rem;
+
+        @include responsive.max($breakpoint:1000px) {
+            grid-area: 3 / 2 / 4 / 12;
+            justify-content: space-evenly;
+        }
+
+        @include responsive.max($breakpoint: 700px){
+            grid-area: 3 / 2 / 4 / 10;
+            justify-content: space-between;
+        }
+
+        @include responsive.max($breakpoint: 500px){
+            grid-area: 3 / 1 / 4 / 13;
+            justify-content: space-between;
+        }
+
+        .info__title {
+            font-family: var(--font-accent);
+        }
+
+        .info__text {
+            width: 10rem;
+
+            @include responsive.max($breakpoint: 1100px){
+                width: 8rem;
+            }
+        }
+
+    }
+
+    .contact__items {
+        grid-area: 4 / 1 / 5 / 12;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 5rem;
+
+        @include responsive.max($breakpoint:1000px) {
+            grid-area: 4 / 2 / 5 / 12;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+        }
+
+        @include responsive.max($breakpoint:800px){
+            grid-area: 4 / 3 / 5 / 11;
+        }
+
+        @include responsive.max($breakpoint: 700px){
+            grid-area: 4 / 2 / 5 / 11;
+            justify-content: space-between;
+        }
+
+        @include responsive.max($breakpoint: 500px){
+            grid-area: 4 / 1 / 5 / 13;
+            justify-content: space-between;
+        }
+
+        .contact__item {
+            width: 12rem;
+        }
+
+    }
+
+
+    &__image {
+        @include responsive.max($breakpoint:1000px) {
+            grid-area: 1 / 2 / 2 / 12;
+        }
+    
+        @include responsive.max($breakpoint:800px) {
+            grid-area: 1 / 1 / 2 / 13;
+        }
+    }
+    
+}
+
+
+
+
+
+
+
+
+    
+
+    
+
+
+
+

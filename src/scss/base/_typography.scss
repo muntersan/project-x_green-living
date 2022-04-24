@@ -1,0 +1,89 @@
+@use '../tools/responsive' as responsive;
+
+h2, h3, h4, h5, h6 {
+    font-family: var(--font-sans);
+    color: var(--color-medium);
+    margin: 0;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: var(--font-size-6);
+    font-family: var(--font-accent);
+    margin:0;
+    font-weight: 400;
+    color: var(--color-medium);
+
+    @include responsive.max($breakpoint: 800px) {
+        font-size: var(--font-size-5);
+    }
+
+    @include responsive.max($breakpoint: 400px) {
+        font-size: var(--font-size-4);
+    }
+}
+
+h2 {
+    font-size: var(--font-size-5);
+}
+
+h3 {
+    font-size: var(--font-size-4);
+
+    @include responsive.max($breakpoint: 600px) {
+        font-size: var(--font-size-3);
+    }
+}
+
+h4 {
+    font-size: var(--font-size-3);
+}
+
+h5 {
+    font-size: var(--font-size-2);
+     @include responsive.max($breakpoint:800px){
+        font-size: var(--font-size-1);
+     }
+}
+
+h6 {
+    font-size: var(--font-size-1);
+}
+
+a, li {
+    line-height: 1.5;
+    color: var(--color-dark);
+    text-decoration: none;
+
+    &:hover {
+        color: var(--color-accent);
+    }
+}
+ 
+p {
+    font-size: var(--font-size-1);
+    line-height: 1.5;
+    font-family: var(--font-serif);
+    color: var(--color-dark);
+    margin: 1rem 0;
+    font-weight: 300;
+
+    @include responsive.max($breakpoint:1000px){
+        font-size: var(--font-size-small);
+    }
+
+    @include responsive.max($breakpoint: 400px) {
+        font-size: var(--font-size-base);
+    }
+ }
+
+ span {
+    font-size: var(--font-size-1);
+    line-height: 1.5;
+    font-family: var(--font-serif);
+ }
+
+ ul {
+     list-style: none;
+ }
+

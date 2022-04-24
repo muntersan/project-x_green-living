@@ -1,0 +1,126 @@
+@use '../tools/responsive' as responsive;
+
+.sustainable__image {
+    z-index: 1;
+    position: relative;
+    height: 36rem;
+    grid-area: var(--grid-column-image-1);
+
+    @include responsive.max($breakpoint:1000px) {
+        height: 30rem;      
+    }
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            height: 44rem;
+            width: 30rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: var(--color-accent);
+            left: -2.5rem;
+            z-index: -1;
+
+            @include responsive.max($breakpoint:1100px) {
+                width: 20rem;
+                height: 37rem;
+            }
+
+            @include responsive.max($breakpoint:1000px) {
+                display: none;
+            }
+
+        }
+            
+
+    &__inner {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        background-image: url(/assets/images/image-3@2x.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include responsive.eleven() {
+            height: 80%;
+        }
+
+    }
+}
+
+.sustainable {
+
+    &__content {
+        grid-area: var(--grid-column-content-2);
+
+        @include responsive.max($breakpoint:1000px) {
+            grid-area: 2 / 3 / 3 / 11;
+        }
+    
+        @include responsive.max($breakpoint:800px) {
+            grid-area: 2 / 1 / 3 / 13;
+        }
+
+        .section__title {
+            grid-area: 1 / 1 / 2 / 12;
+
+            @include responsive.ten() {
+                text-align: center;
+                grid-area: 1 / 2 / 2 / 12;
+            }
+
+            @include responsive.max($breakpoint: 700px) {
+                text-align: left;
+            }
+
+            @include responsive.max($breakpoint: 500px) {
+                grid-area: 1 / 1 / 2 / 13;
+            }
+        }
+
+        .section__texts {
+            grid-area: 2 / 1 / 3 / 12;
+
+            @include responsive.max($breakpoint:1000px) {
+                grid-area: 2 / 2 / 3 / 12;
+            }
+
+            @include responsive.max($breakpoint: 700px) {
+                max-width: 25rem;
+            }
+
+            @include responsive.max($breakpoint: 500px) {
+                grid-area: 2 / 1 / 3 / 13;
+            }
+            
+            .section__text {
+                @include responsive.max($breakpoint:1000px) {
+                    text-align: center;
+                }
+    
+                @include responsive.max($breakpoint: 700px) {
+                    text-align: left;
+                }
+
+            }
+
+        }
+
+    }
+
+    &__image {
+        @include responsive.max($breakpoint:1000px) {
+            grid-area: 1 / 2 / 2 / 12;
+        }
+    
+        @include responsive.max($breakpoint:800px) {
+            grid-area: 1 / 1 / 2 / 13;
+        }
+    }
+
+}

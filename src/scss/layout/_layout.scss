@@ -1,0 +1,73 @@
+@use '../tools/responsive' as responsive;
+
+.container {
+    background-color: var(--color-light);
+}
+
+.section {
+    display: grid;
+    grid-template-columns: var(--grid-column);
+    margin-top: var(--section-gap-inner);
+
+    @include responsive.max($breakpoint:1100px) {
+        margin-top: 4rem;
+    }
+
+    @include responsive.max($breakpoint: 900px){
+        margin-top: 2rem;
+    }
+
+    &__inner {
+        grid-column: inner;
+        display: grid;
+        grid-template-columns: var(--grid-inner);
+        align-items: center;
+
+        @include responsive.max($breakpoint:1000px) {
+            grid-template-rows: auto;
+        }
+    }
+
+    &__content {
+        display: grid;
+        grid-template-columns: var(--grid-inner);
+        grid-template-rows: auto; 
+    }
+
+    &__image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
+.contact__items {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    .contact__item {
+        display: flex;
+        margin-bottom: 1rem;
+        align-items: center;
+        font-weight: 300;
+        
+        &:hover .contact__icon{
+            fill: var(--color-accent);
+        }
+    }
+
+    .contact__icon {
+        margin-right: 0.8rem;
+        max-width: 1.25rem;
+        max-height: auto;
+    }
+
+    .contact__info {
+        font-weight: 300;
+        font-size: var(--font-size-small);
+    }
+        
+}

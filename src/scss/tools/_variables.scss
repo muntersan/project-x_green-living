@@ -1,0 +1,57 @@
+@use '../tools/responsive' as responsive;
+:root {
+
+    //fonts
+    --font-sans: 'rollerscript-rough','sans-serif';
+    --font-serif:  'dashiell-fine', serif;
+    --font-accent: 'looking-flowers-caps', sans-serif;
+
+    //font base & scale
+    --font-base: 16px;
+    --font-scale: 1.25;
+    --font-size-small: var(--font-base); //16
+    --font-size-1: calc( var(--font-size-small) * var(--font-scale)); //20
+    --font-size-2: calc( var(--font-size-1) * var(--font-scale)); //25
+    --font-size-3: calc( var(--font-size-2) * var(--font-scale)); //31,25
+    --font-size-4: calc( var(--font-size-3) * var(--font-scale)); //39,06
+    --font-size-5: calc( var(--font-size-4) * var(--font-scale)); //48,83
+    --font-size-6: calc( var(--font-size-5) * var(--font-scale) * var(--font-scale)); //76,3
+
+    //colors
+    --color-accent: #C1D4C7;
+    --color-light: #FAF9F2;
+    --color-medium: #015C31;
+    --color-dark: #1B382B;
+
+    //gaps
+    --section-gap-small: 2,5rem;
+    --section-gap: 6,25rem;
+    --section-gap-inner: 10rem;
+
+    
+
+    //grid gaps
+    --grid-gap: 1rem;
+
+    //content settings
+    --content-width: 76rem ;
+    --content-width-small: ;
+
+    //menu settings
+    --menu-height: 70px;
+
+    //grids
+    --grid-column: minmax(40px, 1fr)[inner-start ] minmax(0, var(--content-width)) [inner-end] minmax(40px, 1fr);
+    --grid-inner: repeat(12, 1fr);
+
+    @include responsive.max($breakpoint: 500px){
+        --grid-column: 10px [inner-start ] minmax(0, var(--content-width)) [inner-end] 10px;
+    }
+
+    //grid placement
+    --grid-column-image-1: 1 / 1 / 2 / 7;
+    --grid-column-image-2: 1 / 7 / 2 / 13;
+    --grid-column-content-1: 1 / 1 / 2 / 6;
+    --grid-column-content-2: 1 / 8 / 2 / 13;
+    
+}

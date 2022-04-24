@@ -1,0 +1,46 @@
+@use '../tools/responsive' as responsive;
+
+.header {
+    display: grid;
+    grid-template-columns: var(--grid-column);
+    position: fixed;
+    z-index: 999;
+    max-height: var(--menu-height); 
+    height: 100%;
+    width: 100vw;
+
+    @include responsive.max($breakpoint:800px){
+        background-color: var(--color-light);
+    }
+
+    &__inner {
+        grid-column: inner;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .branding {
+        grid-area: 1 / 1 / 2 / 3;
+    }
+    
+    .logo {
+        max-width: 15vw;
+
+        @include responsive.max($breakpoint: 700px){
+            max-width: 25vw;
+            margin-left: 30px;
+        }
+    }
+    
+    .menu {
+        grid-area: 1 / 10 / 2 / 13;
+    }
+
+    //background when scrolled
+    &--scrolled {
+        background-color: var(--color-light);
+        transition: 0.5s
+    }
+    
+}
